@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import API_BASE_URL from '../config/apiConfig'; // Ajusta la ruta relativa para llegar al archivo apiConfig.js
 
 const UpdateEvent = () => {
   const { id } = useParams();
@@ -15,7 +14,8 @@ const UpdateEvent = () => {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}/api/events/${id}`); // Utiliza la URL base de la API para la solicitud GET
+        // Reemplaza 'http://localhost:3001' con la URL de tu backend
+        const response = await axios.get(`http://localhost:3000/event/${id}`);
         setEventData(response.data);
       } catch (error) {
         console.error('Error al cargar el evento:', error);
@@ -29,7 +29,8 @@ const UpdateEvent = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.put(`${API_BASE_URL}/api/events/${id}`, eventData); // Utiliza la URL base de la API para la solicitud PUT
+      // Reemplaza 'http://localhost:3001' con la URL de tu backend
+      const response = await axios.put(`http://localhost:3000/event/${id}`, eventData);
       console.log('Evento actualizado:', response.data);
       // Aquí puedes redirigir al usuario a la vista del evento actualizado o realizar otras acciones necesarias
     } catch (error) {

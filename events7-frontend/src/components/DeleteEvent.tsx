@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-import API_BASE_URL from '../config/apiConfig'; // Ajusta la ruta relativa para llegar al archivo apiConfig.js
 
 const DeleteEvent = () => {
   const { id } = useParams();
@@ -9,7 +8,8 @@ const DeleteEvent = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`${API_BASE_URL}/api/events/${id}`); // Utiliza la URL base de la API para la solicitud DELETE
+      // Reemplaza 'http://localhost:3001' con la URL de tu backend
+      await axios.delete(`http://localhost:3000/event/${id}`);
       // Después de la eliminación, puedes redirigir al usuario a una página diferente
       navigate('/'); // Redirige al usuario a la página de inicio u otra ruta adecuada
     } catch (error) {

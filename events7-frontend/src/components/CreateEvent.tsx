@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import API_BASE_URL from '../config/apiConfig'; // Ajusta la ruta relativa para llegar al archivo apiConfig.js
 
 const CreateEvent = () => {
   const [eventData, setEventData] = useState({
@@ -17,9 +16,9 @@ const CreateEvent = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/events`, eventData); // Utiliza la URL base de la API para la solicitud
+      const response = await axios.post('http://localhost:3000/event', eventData); // Cambia la URL a la ruta local de tu backend
       console.log('Evento creado:', response.data);
       // Aquí puedes redirigir al usuario a la vista del evento creado o realizar otras acciones necesarias
     } catch (error) {

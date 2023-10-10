@@ -1,20 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import CreateEvent from './components/CreateEvent';
-import ViewEvent from './components/ViewEvent';
-import UpdateEvent from './components/UpdateEvent';
-import DeleteEvent from './components/DeleteEvent';
+import CreateEventPage from './pages/CreateEventPage';
+import ViewEventPage from './pages/ViewEventPage';
+import UpdateEventPage from './pages/UpdateEventPage';
+import DeleteEventPage from './pages/DeleteEventPage';
 
 const AppRouter = () => {
   return (
-    <Router>
+    
       <Routes>
-        <Route path="/create" element={<CreateEvent />} />
-        <Route path="/view/:id" element={<ViewEvent />} />
-        <Route path="/update/:id" element={<UpdateEvent />} />
-        <Route path="/delete/:id" element={<DeleteEvent />} />
+        <Route path="/create" element={<CreateEventPage />} />
+        <Route path="/view/:id" element={<ViewEventPage />} />
+        <Route path="/update/:id" element={<UpdateEventPage />} />
+        <Route path="/delete/:id" element={<DeleteEventPage />} />
       </Routes>
-    </Router>
+    
   );
 };
 

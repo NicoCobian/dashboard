@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import API_BASE_URL from '../config/apiConfig'; // Ajusta la ruta relativa para llegar al archivo apiConfig.js
 
 const ViewEvent = () => {
   const { id } = useParams();
-  const [event, setEvent] = useState<{ id: number, name: string, description: string, type: string } | null>(null);
+  const [event, setEvent] = useState<{
+    id: number;
+    name: string;
+    description: string;
+    type: string;
+  } | null>(null);
 
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}/api/events/${id}`); // Utiliza la URL base de la API para la solicitud GET
+        // Reemplaza 'http://localhost:3000' con la URL de tu backend
+        // Asegúrate de que coincida con la ruta definida en tu backend ('/event/:id')
+        const response = await axios.get(`http://localhost:3000/event/${id}`);
         setEvent(response.data);
       } catch (error) {
         console.error('Error al cargar el evento:', error);
