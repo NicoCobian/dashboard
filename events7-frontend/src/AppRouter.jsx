@@ -1,20 +1,17 @@
+// AppRouter.tsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import EventListPage from './pages/EventListPage';
 import CreateEventPage from './pages/CreateEventPage';
-import ViewEventPage from './pages/ViewEventPage';
-import UpdateEventPage from './pages/UpdateEventPage';
-import DeleteEventPage from './pages/DeleteEventPage';
 
 const AppRouter = () => {
   return (
-    
+    <Router>
       <Routes>
+        <Route path="/" element={<EventListPage />} />
         <Route path="/create" element={<CreateEventPage />} />
-        <Route path="/view/:id" element={<ViewEventPage />} />
-        <Route path="/update/:id" element={<UpdateEventPage />} />
-        <Route path="/delete/:id" element={<DeleteEventPage />} />
       </Routes>
-    
+    </Router>
   );
 };
 

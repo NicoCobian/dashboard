@@ -1,34 +1,30 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import AppRouter from './AppRouter'; // Importa tu archivo de enrutamiento
-import { Link } from 'react-router-dom';
-
-
-const App = () => {
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import EventListPage from './pages/EventListPage';
+import CreateEventPage from './pages/CreateEventPage';
+import './app.css'; 
+function App() {
   return (
     <Router>
-    <div>
-      <h1>Mi Aplicación React</h1>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/create">Crear Evento</Link>
-          </li>
-          <li>
-            <Link to="/view/2">Ver Evento 1</Link>
-          </li>
-          <li>
-            <Link to="/update/3">Actualizar Evento 1</Link>
-          </li>
-          <li>
-            <Link to="/delete/4">Eliminar Evento 1</Link>
-          </li>
-        </ul>
-      </nav>
-      <AppRouter /> {/* Utiliza el enrutador configurado */}
-    </div>
+      <div className="container"> {/* Agrega la clase "container" para centrar el contenido */}
+        <h1>Events7</h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Event List</Link>
+            </li>
+            <li>
+              <Link to="/create">Create Event</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<EventListPage />} />
+          <Route path="/create" element={<CreateEventPage />} />
+        </Routes>
+      </div>
     </Router>
   );
-};
+}
 
 export default App;

@@ -1,0 +1,11 @@
+/* Estilo para la lista de eventos */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto; /* Habilita la barra de desplazamiento vertical si es necesario */
+    max-height: 400px; /* Establece una altura máxima para la lista */
+  }
+  
+  /* Otros estilos para tus eventos y botones */
+  
