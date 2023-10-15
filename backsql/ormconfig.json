@@ -1,0 +1,9 @@
+{
+    "type": "sqlite",
+    "database": "C:/Users/nicot/OneDrive/Escritorio/outfit8/events7-db.db",
+    "synchronize": true,
+    "entities": ["dist/**/*.entity.js"],
+    "migrations": ["dist/migrations/*.js"],
+    "subscribers": ["dist/subscribers/*.js"]
+  }
+  
