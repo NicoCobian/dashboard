@@ -1,0 +1,3 @@
+[submodule "backsql"]
+    path = backsql
+    url = https://github.com/NicoCobian/dashboard.git
